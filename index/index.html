@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Six Siege - Sitio Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Efectos visuales -->
+    <div class="grain-overlay"></div>
+    <div class="scanline"></div>
+
+    <!-- Botón menú móvil -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Logo -->
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fas fa-crosshairs"></i>
+            </div>
+            <div class="logo-text">
+                <h1>RAINBOW SIX</h1>
+                <span>SIEGE</span>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="#home" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#operators" class="nav-link" data-section="operators">
+                        <i class="fas fa-users"></i>
+                        <span>Operadores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#maps" class="nav-link" data-section="maps">
+                        <i class="fas fa-map"></i>
+                        <span>Mapas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#modes" class="nav-link" data-section="modes">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Modos de Juego</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#download" class="nav-link" data-section="download">
+                        <i class="fas fa-download"></i>
+                        <span>Descargar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#news" class="nav-link" data-section="news">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Noticias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#news" class="nav-link" data-section="news">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sección de usuario -->
+        <div class="sidebar-user" id="userSection">
+            <!-- El contenido se genera dinámicamente con JavaScript -->
+        </div>
+    </aside>
+
+    <!-- Overlay para móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        
+        <!-- SECCIÓN: INICIO -->
+        <section id="home" class="section active">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-bg">
+                    <img src="images/hero-bg.jpg" alt="Rainbow Six Siege">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">NUEVA TEMPORADA</span>
+                    <h1 class="hero-title">RAINBOW SIX</h1>
+                    <h2 class="hero-subtitle">SIEGE</h2>
+                    <p class="hero-description">
+                        El shooter táctico por equipos más intenso. Destruye, defiende y domina en combates 5v5.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Jugar Gratis
+                        </a>
+                        <a href="#operators" class="btn btn-outline">
+                            <i class="fas fa-users"></i> Ver Operadores
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Características -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>TÁCTICA REAL</h3>
+                    <p>Cada partida es única. Usa el entorno a tu favor y planifica cada movimiento.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>60+ OPERADORES</h3>
+                    <p>Cada operador tiene habilidades únicas. Encuentra tu estilo de juego perfecto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>COMPETITIVO</h3>
+                    <p>Clasifica y compite en ligas. Demuestra tus habilidades en torneos mundiales.</p>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">70M+</span>
+                    <span class="stat-label">Jugadores</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label">Operadores</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Mapas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Años de Juego</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: OPERADORES -->
+        <section id="operators" class="section">
+            <div class="section-header">
+                <h2 class="section-title">OPERADORES</h2>
+                <p class="section-description">
+                    Cada operador tiene habilidades únicas y equipo especializado. Elige sabiamente para dominar el campo de batalla.
+                </p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="attacker">Atacantes</button>
+                <button class="filter-btn" data-filter="defender">Defensores</button>
+            </div>
+
+            <!-- Grid de operadores -->
+            <div class="operators-grid" id="operatorsGrid">
+                <!-- Los operadores se generan con JavaScript -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MAPAS -->
+        <section id="maps" class="section">
+            <div class="section-header">
+                <h2 class="section-title">MAPAS</h2>
+                <p class="section-description">
+                    Domina cada ubicación. Cada mapa ofrece oportunidades únicas para atacar y defender.
+                </p>
+            </div>
+
+            <div class="maps-grid" id="mapsGrid">
+                <!-- Los mapas se generan con JavaScript -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MODOS DE JUEGO -->
+        <section id="modes" class="section">
+            <div class="section-header">
+                <h2 class="section-title">MODOS DE JUEGO</h2>
+                <p class="section-description">
+                    Cada modo ofrece una experiencia táctica única. Domina todos para convertirte en el mejor operador.
+                </p>
+            </div>
+
+            <div class="modes-grid" id="modesGrid">
+                <!-- Los modos se generan con JavaScript -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN: DESCARGAR -->
+        <section id="download" class="section">
+            <div class="section-header">
+                <h2 class="section-title">DESCARGAR</h2>
+                <p class="section-description">
+                    Únete a más de 70 millones de jugadores. Disponible gratis en todas las plataformas.
+                </p>
+            </div>
+
+            <!-- Plataformas -->
+            <div class="platforms-grid" id="platformsGrid">
+                <!-- Las plataformas se generan con JavaScript -->
+            </div>
+
+            <!-- Requisitos -->
+            <div class="requirements">
+                <div class="requirement-card">
+                    <h3><i class="fas fa-check-circle"></i> REQUISITOS MÍNIMOS</h3>
+                    <ul>
+                        <li><span>SO:</span> Windows 10 64-bit</li>
+                        <li><span>Procesador:</span> Intel Core i3 560 @ 3.3 GHz</li>
+                        <li><span>Memoria:</span> 6 GB RAM</li>
+                        <li><span>Gráficos:</span> NVIDIA GeForce GTX 460</li>
+                        <li><span>Almacenamiento:</span> 61 GB disponibles</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3><i class="fas fa-star"></i> RECOMENDADO</h3>
+                    <ul>
+                        <li><span>SO:</span> Windows 11 64-bit</li>
+                        <li><span>Procesador:</span> Intel Core i5-2500K @ 3.3 GHz</li>
+                        <li><span>Memoria:</span> 8 GB RAM</li>
+                        <li><span>Gráficos:</span> NVIDIA GeForce GTX 670</li>
+                        <li><span>Almacenamiento:</span> 61 GB SSD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: NOTICIAS -->
+        <section id="news" class="section">
+            <div class="section-header">
+                <h2 class="section-title">NOTICIAS</h2>
+                <p class="section-description">
+                    Mantente al día con las últimas actualizaciones, eventos y novedades de Rainbow Six Siege.
+                </p>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <!-- Las noticias se generan con JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>INICIAR SESIÓN</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+            </form>
+            <p class="modal-footer">
+                ¿No tienes cuenta? <a href="#">Regístrate</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
