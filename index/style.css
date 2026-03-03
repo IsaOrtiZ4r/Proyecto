@@ -730,6 +730,59 @@ ul {
     font-size: 13px;
 }
 
+/* Modal operador flex completo */
+.operator-modal {
+    max-width: 900px; /* Más ancho */
+    width: 90%;
+    max-height: 90vh; /* Máximo alto de la ventana */
+    background-color: rgba(0,0,0,0.95); /* Fondo negro más visible */
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* Header */
+.operator-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor de imagen + info */
+.operator-details {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    overflow-y: auto; /* Scroll interno si contenido muy largo */
+}
+
+/* Imagen del operador */
+.operator-image-container img {
+    width: 350px; /* Imagen más grande */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Información del operador */
+.operator-info-container {
+    flex: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Párrafos de información */
+.operator-info-container p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
 /* ============================================
    MAPAS
    ============================================ */

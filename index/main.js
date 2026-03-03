@@ -14,7 +14,8 @@ const operators = [
         role: 'attacker',
         roleName: 'Atacante',
         ability: 'Lanzagranadas M320 CREM',
-        image: 'images/Ash.jpg'
+        image: 'images/Ash.jpg',
+        story: 'Ash es una experta en demoliciones y ataques rápidos, conocida por su precisión y agilidad en el campo de batalla.'
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ const operators = [
         role: 'attacker',
         roleName: 'Atacante',
         ability: 'Carga Exotérmica',
-        image: 'images/Thermite_2.jpg'
+        image: 'images/Thermite_2.jpg',
+        story: 'Thermite es un especialista en abrir muros reforzados y puntos estratégicos, fundamental para ataques coordinados.'
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ const operators = [
         role: 'attacker',
         roleName: 'Atacante',
         ability: 'Mazo de Demolición',
-        image: 'images/SLEDGE.jpg'
+        image: 'images/SLEDGE.jpg',
+        story: 'Sledge es un operador fuerte que utiliza su mazo para abrir brechas y sorprender a los defensores con ataques rápidos.'
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const operators = [
         role: 'defender',
         roleName: 'Defensor',
         ability: 'Chaleco Blindado',
-        image: 'images/Rook.jpg'
+        image: 'images/Rook.jpg',
+        story: 'Rook es un defensor que protege a su equipo proporcionando chalecos blindados y cobertura durante los combates.'
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ const operators = [
         role: 'defender',
         roleName: 'Defensor',
         ability: 'Sistema de Defensa Activa',
-        image: 'images/jäger.jpg'
+        image: 'images/jäger.jpg',
+        story: 'Jäger es un experto en defensa aérea y en neutralizar proyectiles enemigos, manteniendo seguros los objetivos.'
     },
     {
         id: 6,
@@ -54,7 +59,8 @@ const operators = [
         role: 'defender',
         roleName: 'Defensor',
         ability: 'Cables de Alta Tensión',
-        image: 'images/BANDIT.jpg'
+        image: 'images/BANDIT.jpg',
+        story: 'Bandit utiliza tecnología eléctrica para reforzar barreras y proteger las entradas del equipo defensor.'
     }
 ];
 
@@ -121,43 +127,49 @@ const platforms = [
         id: 1,
         name: 'PC',
         icon: 'fa-desktop',
-        stores: ['Ubisoft Connect', 'Steam', 'Epic Games']
+        stores: ['Ubisoft Connect', 'Steam', 'Epic Games'],
+        link: 'https://store.ubisoft.com/es/rainbow-six-siege'
     },
     {
         id: 2,
         name: 'PlayStation',
         icon: 'fa-playstation',
-        stores: ['PS4', 'PS5']
+        stores: ['PS4', 'PS5'],
+        link: 'https://store.playstation.com/'
     },
     {
         id: 3,
         name: 'Xbox',
         icon: 'fa-xbox',
-        stores: ['Xbox One', 'Xbox Series X|S']
+        stores: ['Xbox One', 'Xbox Series X|S'],
+        link: 'https://www.xbox.com/'
     }
 ];
 
 const news = [
     {
         id: 1,
-        title: 'Nueva Temporada: Operación Vector Glare',
-        date: '2024-01-15',
+        title: 'Nueva Temporada: Operación Silent Hunt',
+        date: '2026-03-03',
         category: 'Actualización',
-        image: 'images/news-1.jpg'
+        image: 'images/temporada.jpg',
+        link: 'https://siege.gg/news/when-is-the-next-rainbow-six-siege-season'
     },
     {
         id: 2,
-        title: 'Campeonato Mundial 2024',
-        date: '2024-01-10',
+        title: 'Campeonato Mundial 2026',
+        date: '2026-02-13',
         category: 'Esports',
-        image: 'images/hero-bg.jpg'
+        image: 'images/campeonato.jpg',
+        link: 'https://www.ubisoft.com/es-es/esports/rainbow-six/siege/competition/477'
     },
     {
         id: 3,
-        title: 'Nuevo Operador: SENS',
-        date: '2024-01-05',
+        title: 'Nuevo Operador: Solid Snake',
+        date: '2026-03-03',
         category: 'Personajes',
-        image: 'images/operator-1.jpg'
+        image: 'images/Solid.jpg',
+        link: 'https://www.ubisoft.com/es-mx/game/rainbow-six/siege/game-info/operators/solid-snake'
     }
 ];
 
@@ -189,8 +201,9 @@ function formatDate(dateString) {
 // RENDERIZADO DE CONTENIDO
 // ============================================
 
+// Renderizado de operadores
 function renderOperators(filter = 'all') {
-    const grid = $('#operatorsGrid');
+    const grid = document.getElementById('operatorsGrid');
     if (!grid) return;
 
     const filteredOperators = filter === 'all' 
@@ -209,7 +222,40 @@ function renderOperators(filter = 'all') {
             </div>
         </div>
     `).join('');
+
+    // Agregar evento click a cada operador para abrir modal
+    document.querySelectorAll('.operator-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const name = card.querySelector('.operator-name').textContent;
+            const op = operators.find(o => o.name === name);
+            if (op) showOperatorModal(op);
+        });
+    });
 }
+
+// Función para abrir modal de operador
+function showOperatorModal(operator) {
+    document.getElementById('operatorName').textContent = operator.name;
+    document.getElementById('operatorImage').src = operator.image;
+    document.getElementById('operatorRole').textContent = operator.roleName;
+    document.getElementById('operatorAbility').textContent = operator.ability;
+    document.getElementById('operatorStory').textContent = operator.story;
+
+    const modal = document.getElementById('operatorModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar modal
+function closeOperatorModal() {
+    const modal = document.getElementById('operatorModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+
+// Botón de cerrar modal
+document.getElementById('closeOperatorModal').addEventListener('click', closeOperatorModal);
 
 function renderMaps() {
     const grid = $('#mapsGrid');
@@ -261,11 +307,24 @@ function renderPlatforms() {
             <div class="platform-stores">
                 ${platform.stores.map(store => `<p>${store}</p>`).join('')}
             </div>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary download-btn" 
+                    data-link="${platform.link}">
                 <i class="fas fa-download"></i> Descargar
             </button>
         </div>
     `).join('');
+
+    // Agregar evento a cada botón
+    const buttons = $$('.download-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const link = btn.getAttribute('data-link');
+
+            // Abrir en nueva pestaña
+            window.open(link, '_blank');
+        });
+    });
 }
 
 function renderNews() {
@@ -284,9 +343,11 @@ function renderNews() {
                     <span>${formatDate(item.date)}</span>
                 </div>
                 <h3 class="news-title">${item.title}</h3>
-                <span class="news-link">
+
+                <a href="${item.link}" class="news-link">
                     Leer más <i class="fas fa-chevron-right"></i>
-                </span>
+                </a>
+
             </div>
         </article>
     `).join('');

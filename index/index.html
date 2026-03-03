@@ -71,8 +71,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#news" class="nav-link" data-section="news">
-                        <i class="fas fa-newspaper"></i>
+                    <a href="#dashboard" class="nav-link" data-section="dashboard">
+                        <i class="fas fa-chart-line"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -107,10 +107,10 @@
                         El shooter táctico por equipos más intenso. Destruye, defiende y domina en combates 5v5.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#download" class="btn btn-primary">
+                        <a href="#download" class="btn btn-primary nav-link" data-section="download">
                             <i class="fas fa-play"></i> Jugar Gratis
                         </a>
-                        <a href="#operators" class="btn btn-outline">
+                        <a href="#operators" class="btn btn-outline nav-link" data-section="operators">
                             <i class="fas fa-users"></i> Ver Operadores
                         </a>
                     </div>
@@ -171,6 +171,31 @@
                     Cada operador tiene habilidades únicas y equipo especializado. Elige sabiamente para dominar el campo de batalla.
                 </p>
             </div>
+
+           <!-- Modal de Operador -->
+<div class="modal" id="operatorModal">
+    <div class="modal-content operator-modal">
+        <div class="modal-header">
+            <h2 id="operatorName">Operador</h2>
+            <button class="modal-close" id="closeOperatorModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="operator-details">
+            <!-- Imagen a la izquierda -->
+            <div class="operator-image-container">
+                <img id="operatorImage" src="" alt="Operador">
+            </div>
+            <!-- Información a la derecha -->
+            <div class="operator-info-container">
+                <p><strong>Rol:</strong> <span id="operatorRole"></span></p>
+                <p><strong>Habilidad:</strong> <span id="operatorAbility"></span></p>
+                <p><strong>Historia:</strong></p>
+                <p id="operatorStory"></p>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- Filtros -->
             <div class="filter-buttons">
