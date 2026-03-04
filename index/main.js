@@ -380,6 +380,7 @@ function renderUserSection() {
     } else {
         userSection.innerHTML = `
             <button class="btn btn-primary btn-full" id="loginBtn">
+            <a href="../Login/inicio.html">
                 <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
             </button>
         `;
