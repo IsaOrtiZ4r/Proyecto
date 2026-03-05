@@ -695,6 +695,85 @@ document.addEventListener('contextmenu', (e) => {
     }
 });
 
+/*=============
+Dashboard radar
+===============*/
+const ctx = document.getElementById("radarStats");
+
+const radarChart = new Chart(ctx, {
+    type: "radar",
+    data: {
+        labels: [
+            "Kills",
+            "Deaths",
+            "Wins",
+            "Losses",
+            "Headshots",
+            "Melee",
+            "Games",
+            "Time"
+        ],
+        datasets: [{
+            label: "Estadísticas del Jugador",
+            data: [0,0,0,0,0,0,0,0],
+
+            backgroundColor: "rgba(255,107,0,0.15)",
+            borderColor: "#ff6b00",
+            borderWidth: 2,
+            pointBackgroundColor: "#ff6b00",
+            pointBorderColor: "#fff",
+            pointRadius: 4,
+            pointHoverRadius: 6
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        plugins: {
+            legend: {
+                labels: {
+                    color: "white",
+                    font: {
+                        family: "Orbitron"
+                    }
+                }
+            }
+        },
+
+        scales: {
+            r: {
+
+                grid: {
+                    color: "rgba(255,255,255,0.1)"
+                },
+
+                angleLines: {
+                    color: "rgba(255,107,0,0.3)"
+                },
+
+                pointLabels: {
+                    color: "#ff6b00",
+                    font: {
+                        size: 12,
+                        family: "Orbitron"
+                    }
+                },
+
+                ticks: {
+                    backdropColor: "transparent",
+                    color: "white"
+                }
+            }
+        },
+
+        animation: {
+            duration: 1200
+        }
+    }
+});
+
 // Agregar keyframes para notificaciones
 const style = document.createElement('style');
 style.textContent = `
@@ -710,3 +789,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+
