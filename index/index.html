@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Efectos visuales -->
@@ -292,9 +293,80 @@
             </div>
         </section>
 
+    
+
+            <!-- SECCIÓN: DASHBOARD -->
+        <section id="dashboard" class="section">
+
+            <div class="dashboard-container">
+
+                    <div class="header">
+                        <h1>PANEL TÁCTICO</h1>
+                        <span>Estado: ACTIVO</span>
+                    </div>
+
+                <div class="search-box">
+                    <input type="text" id="nombreBusqueda" placeholder="Nombre del jugador">
+                    <button onclick="buscarUsuario()">Buscar</button>
+                </div>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Kills</h3>
+                        <p id="stat-kills">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Deaths</h3>
+                        <p id="stat-deaths">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Wins</h3>
+                        <p id="stat-wins">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Losses</h3>
+                        <p id="stat-losses">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Headshots</h3>
+                        <p id="stat-headshots">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Melee</h3>
+                        <p id="stat-melee">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Games</h3>
+                        <p id="stat-games">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Time Played</h3>
+                        <p id="stat-time">0</p>
+                    </div>
+
+                </div>
+
+                <div class="chart-box">
+                    <h3>ESTADÍSTICAS DEL OPERADOR</h3>
+                    <canvas id="radarStats"></canvas>
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
     <!-- Scripts -->
     <script src="main.js"></script>
 </body>
 </html>
+
